@@ -1,0 +1,147 @@
+
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f4f4f4;
+}
+
+header{
+background:#0d6efd;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+nav{
+background:#084298;
+padding:12px;
+text-align:center;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:15px;
+font-weight:bold;
+}
+
+.container{
+width:90%;
+margin:30px auto;
+}
+
+.cards{
+display:flex;
+flex-wrap:wrap;
+justify-content:space-between;
+gap:20px;
+}
+
+.card{
+flex:1;
+min-width:220px;
+background:white;
+padding:20px;
+text-align:center;
+border-radius:10px;
+box-shadow:0 3px 10px rgba(0,0,0,.2);
+}
+
+.card h2{
+color:#0d6efd;
+margin-bottom:10px;
+}
+
+.chart{
+margin-top:40px;
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 3px 10px rgba(0,0,0,.2);
+}
+
+.bar{
+display:flex;
+align-items:flex-end;
+justify-content:space-around;
+height:300px;
+margin-top:30px;
+}
+
+.column{
+width:70px;
+background:#0d6efd;
+text-align:center;
+color:white;
+font-weight:bold;
+border-radius:5px 5px 0 0;
+}
+
+.column span{
+display:block;
+margin-top:-25px;
+}
+
+.labels{
+display:flex;
+justify-content:space-around;
+margin-top:10px;
+font-weight:bold;
+}
+
+.pie{
+width:220px;
+height:220px;
+border-radius:50%;
+margin:30px auto;
+background:conic-gradient(
+#0d6efd 0% 35%,
+orange 35% 60%,
+green 60% 80%,
+red 80% 100%
+);
+}
+
+.legend{
+text-align:center;
+margin-top:20px;
+}
+
+.legend p{
+margin:8px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:30px;
+background:white;
+}
+
+table th,table td{
+border:1px solid #ddd;
+padding:12px;
+text-align:center;
+}
+
+th{
+background:#0d6efd;
+color:white;
+}
+
+footer{
+margin-top:40px;
+background:#222;
+color:white;
+text-align:center;
+padding:15px;
+}
+
+
+
