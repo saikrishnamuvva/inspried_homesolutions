@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dream Bedroom Interior Design</title>
+<link rel="stylesheet" type="text/css" href="../static/css/bed.css">
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">Dream Bedroom</div>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#features">Features</a>
+<a href="#gallery">Gallery</a>
+<a href="booking.html">Contact</a>
+</nav>
+
+<button id="themeBtn">??</button>
+
+</header>
+
+<!-- Hero -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<h1>Luxury Bedroom Interior</h1>
+
+<p>
+Create your dream bedroom with elegant furniture,
+warm lighting, premium dicor, and modern interior ideas.
+</p>
+
+<button onclick="scrollToGallery()">View Gallery</button>
+
+</div>
+
+</section>
+
+<!-- Features -->
+
+<section id="features">
+
+<h2 class="title">Our Features</h2>
+
+<div class="gallery">
+<img src="../static/images/bed1.jpg">
+
+<img src="../static/images/bed2.jpg">
+
+<img src="../static/images/bed3.jpg">
+
+<img src="../static/images/bed4.jpg">
+
+<img src="../static/images/bed5.jpg">
+
+</div>
+
+</section>
+
+<!-- Gallery -->
+
+<section id="gallery">
+
+<h2 class="title">Bedroom Gallery</h2>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80">
+
+<img src="../static/images/bed1.jpg">
+
+<img src="../static/images/bed2.jpg">
+
+<img src="../static/images/bed3.jpg">
+
+</div>
+
+</section>
+
+<footer>
+
+<p>  2026 Dream Bedroom Interior Design | All Rights Reserved</p>
+
+</footer>
+
+<script>
+
+// Dark Mode
+
+const themeBtn=document.getElementById("themeBtn");
+
+themeBtn.onclick=function(){
+
+document.body.classList.toggle("dark");
+
+themeBtn.textContent=document.body.classList.contains("dark") ? "?" : "??";
+
+}
+
+// Scroll
+
+function scrollToGallery(){
+
+document.getElementById("gallery").scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+// Contact
+
+function sendMessage(){
+
+alert("Thank you! Your message has been submitted.");
+
+}
+
+</script>
+
+</body>
+</html>

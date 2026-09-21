@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inspired Home Solutions - Architecture</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="../static/css/architecture.css">
+</head>
+
+<body>
+
+<header>
+
+<nav>
+
+<div class="logo">
+<i class="fa-solid fa-building"></i>
+Inspired Home
+</div>
+
+<ul>
+
+<li><a href="#">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="booking.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<!-- Hero -->
+
+<section class="hero">
+
+<div class="overlay">
+
+<h1>Architecture That Inspires</h1>
+
+<p>
+Creating elegant, luxurious, and sustainable spaces that combine beauty, comfort, and innovation.
+</p>
+
+<button class="btn" onclick="document.getElementById('projects').scrollIntoView()">Explore Projects</button>
+
+</div>
+
+</section>
+
+
+<!-- Projects -->
+
+<section id="projects">
+
+<h2 class="title">Featured Projects</h2>
+
+<div class="projects">
+
+<div class="project hidden">
+<img src="../static/images/g1.jpg">
+<h3>Glass House</h3>
+</div>
+
+<div class="project hidden">
+<img src="../static/images/g2.jpg">
+<h3>Glass House</h3>
+</div>
+
+<div class="project hidden">
+<img src="../static/images/g4.jpg">
+<h3>Glass House</h3>
+</div>
+<div class="project hidden">
+<img src="../static/images/g4.jpg">
+<h3>Glass House</h3>
+</div>
+<div class="project hidden">
+<img src="../static/images/g5.jpg">
+<h3>Glass House</h3>
+</div>
+
+</div>
+
+</section>
+
+<!-- Gallery -->
+
+<section id="gallery">
+
+<h2 class="title">Architecture Gallery</h2>
+
+<div class="gallery">
+
+<img class="hidden" src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=700&q=80">
+
+<img class="hidden" src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&w=700&q=80">
+
+<img class="hidden" src="https://images.unsplash.com/photo-1600047509358-9dc75507daeb?auto=format&fit=crop&w=700&q=80">
+
+<img class="hidden" src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=700&q=80">
+
+</div>
+
+</section>
+
+<!-- Statistics -->
+
+<div class="stats">
+
+<div>
+<h2>250+</h2>
+<p>Projects</p>
+</div>
+
+<div>
+<h2>120+</h2>
+<p>Happy Clients</p>
+</div>
+
+<div>
+<h2>15+</h2>
+<p>Years Experience</p>
+</div>
+
+<div>
+<h2>30+</h2>
+<p>Awards</p>
+</div>
+
+</div>
+
+<footer>
+
+<p>© 2026 Inspired Home Solutions | All Rights Reserved</p>
+
+</footer>
+
+<script>
+
+const hidden=document.querySelectorAll(".hidden");
+
+window.addEventListener("scroll",()=>{
+
+hidden.forEach(item=>{
+
+const top=item.getBoundingClientRect().top;
+
+if(top<window.innerHeight-100){
+
+item.classList.add("show");
+
+}
+
+});
+
+});
+
+</script>
+
+</body>
+</html>

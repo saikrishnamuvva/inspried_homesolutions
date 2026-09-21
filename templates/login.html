@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Login - Inspired Home Solutions</title>
+
+<link rel="stylesheet" type="text/css" href="../static/css/login.css">
+
+
+</head>
+
+<body>
+
+<div class="container">
+
+
+<h2>Login</h2>
+
+<form id="loginForm">
+
+    <div class="input-box">
+        <label>Email</label>
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Enter Email"
+            required
+        >
+    </div>
+
+
+    <div class="input-box">
+        <label>Password</label>
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Enter Password"
+            required
+        >
+    </div>
+
+
+    <button type="submit">
+        Login
+    </button>
+
+
+    <div class="options">
+
+        <a href="forgot_password.html">
+            Forgot Password
+        </a>
+
+        <a href="registration.html">
+            Register
+        </a>
+
+    </div>
+
+
+    <p id="error"></p>
+
+</form>
+
+
+</div>
+
+<script>
+
+document.getElementById("loginForm").addEventListener(
+    "submit",
+    async function(event) {
+
+        event.preventDefault();
+
+
+        const email =
+            document.getElementById("email").value.trim();
+
+        const password =
+            document.getElementById("password").value.trim();
+
+        const error =
+            document.getElementById("error");
+
+
+        // Email validation
+        const emailPattern =
+            /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+        if (!emailPattern.test(email)) {
+
+            error.style.color = "red";
+
+            error.innerText =
+                "Invalid Email Address";
+
+            return;
+        }
+
+
+        // Password validation
+        if (password.length < 6) {
+
+            error.style.color = "red";
+
+            error.innerText =
+                "Password must contain at least 6 characters";
+
+            return;
+        }
+
+
+        error.style.color = "black";
+
+        error.innerText =
+            "Checking login...";
+
+
+        try {
+
+            // Send login details to Flask
+            const response = await fetch(
+                "http://127.0.0.1:5000/api/login",
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+
+                    body: JSON.stringify({
+                        email: email,
+                        password: password
+                    })
+                }
+            );
+
+
+            const result =
+                await response.json();
+
+
+            if (result.success) {
+
+                error.style.color = "green";
+
+                error.innerText =
+                    "Login Successful!";
+
+
+                // Store logged-in user
+                localStorage.setItem(
+                    "user",
+                    JSON.stringify(result.user)
+                );
+
+
+                // Redirect after successful login
+                setTimeout(function() {
+
+                    window.location.href =
+                        "main.html";
+
+                }, 1000);
+
+
+            } else {
+
+                error.style.color = "red";
+
+                error.innerText =
+                    result.message;
+
+            }
+
+
+        } catch (error) {
+
+            console.error(error);
+
+            document.getElementById("error").style.color =
+                "red";
+
+            document.getElementById("error").innerText =
+                "Unable to connect to Flask server.";
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reviews - Inspired Home Solutions</title>
+
+<link rel="stylesheet" type="text/css" href="../static/css/review.css">
+</head>
+<body>
+
+<header>
+<h1>Inspired Home Solutions</h1>
+<p>Customer Reviews</p>
+</header>
+
+<nav>
+<a href="main.html">Home</a>
+<a href="architecture.html">Architecture</a>
+<a href="website.html">Interior</a>
+<a href="homeappli.html">Appliances</a>
+<a href="comparision.html">Comparision</a>
+<a href="booking.html">contact</a>
+</nav>
+
+<div class="container">
+
+<h2>User Reviews</h2>
+
+<div id="reviews">
+
+<div class="review-card">
+<h3>Rahul</h3>
+<p><b>Rating:</b> ★★★★★</p>
+<p>Excellent website for home architecture and appliance comparison.</p>
+</div>
+
+<div class="review-card">
+<h3>Priya</h3>
+<p><b>Rating:</b> ★★★★★</p>
+<p>I found beautiful interior designs and useful appliance details.</p>
+</div>
+
+</div>
+<form   id="reviewForm" action="/submit_review" method="POST">
+
+    <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        required
+    >
+
+    <select name="rating" required>
+        <option value="">Select Rating</option>
+        <option value="1">★</option>
+        <option value="2">★★</option>
+        <option value="3">★★★</option>
+        <option value="4">★★★★</option>
+        <option value="5">★★★★★</option>
+    </select>
+
+    <textarea
+        name="comment"
+        placeholder="Write your review..."
+        required
+    ></textarea>
+
+    <button type="submit">Submit Review</button>
+
+</form>
+
+</div>
+<!-- SUCCESS POPUP -->
+<div id="successPopup" class="popup-overlay">
+
+    <div class="popup-box">
+
+        <div class="success-icon">✓</div>
+
+        <h2>Review Submitted!</h2>
+
+        <p>Your review has been submitted successfully.</p>
+
+        <button  id="ok"onclick="closeSuccessPopup()">OK</button>
+
+    </div>
+
+</div>
+
+
+<!-- ERROR POPUP -->
+<div id="errorPopup" class="popup-overlay">
+
+    <div class="popup-box">
+
+        <div class="error-icon">!</div>
+
+        <h2>Submission Failed</h2>
+
+        <p>Unable to submit your review. Please try again.</p>
+
+        <button id="ok" onclick="closeErrorPopup()">OK</button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+document.getElementById("reviewForm").addEventListener("submit", async function(e) {
+
+    e.preventDefault();
+
+    const form = document.getElementById("reviewForm");
+
+    const formData = new FormData(form);
+
+    try {
+
+        const response = await fetch("/submit_review", {
+            method: "POST",
+            body: formData
+        });
+
+        if (response.ok) {
+
+            // SHOW POPUP
+            document.getElementById("successPopup").style.display = "flex";
+
+            // Clear form
+            form.reset();
+
+        } else {
+
+            alert("Review could not be submitted.");
+
+        }
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert("Cannot connect to Flask server.");
+
+    }
+
+});
+
+
+document.getElementById("ok").addEventListener("click", function() {
+
+    document.getElementById("successPopup").style.display = "none";
+
+    // Reload page and display latest review
+    window.location.reload();
+
+});
+
+</script>
+<footer>
+© 2026 Inspired Home Solutions
+</footer>
+
+
+<script src="../static/js/data-fetch.js"></script>
+
+</body>
+</html>

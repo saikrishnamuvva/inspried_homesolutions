@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Home Appliances</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../static/css/homeappliance.css">
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">SmartHome</div>
+
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#products">Products</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+<div class="hero">
+
+<div>
+
+<h1> Washing machine Home Appliances</h1>
+
+<p>
+Upgrade your lifestyle with energy-efficient kitchen appliances,
+modern smart home technology, and premium solutions for everyday living.
+</p>
+
+<button onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+Explore Products
+</button>
+
+</div>
+
+</div>
+
+<section id="products">
+
+<h2 class="title">Premium Home Appliances</h2>
+
+<div class="grid">
+
+<div class="card">
+<img src="../static/images/w2.jpg">
+<h3>Washing machine</h3>
+<p>AI-powered cleaning with energy-saving technology and modern storage.</p>
+</div>
+
+<div class="card">
+<img src="../static/images/w1.jpg">
+<h3>Washing machine</h3>
+<p>AI-powered cleaning with energy-saving technology and modern storage.</p>
+</div>
+<div class="card">
+<img src="../static/images/w2.jpg">
+<h3>Washing machine</h3>
+<p>AI-powered cleaning with energy-saving technology and modern storage.</p>
+</div>
+<div class="card">
+<img src="../static/images/w3.jpg">
+<h3>Washing machine</h3>
+<p>AI-powered cleaning with energy-saving technology and modern storage.</p>
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<div class="banner" id="contact">
+
+<h2>Experience the Future of Smart Living</h2>
+
+<p>
+Transform your home with intelligent appliances, elegant kitchen solutions,
+and premium technology designed for comfort, convenience, and efficiency.
+</p>
+
+</div>
+
+<footer>
+
+  2026 SmartHome Appliances | Premium Kitchen & Home Solutions
+
+</footer>
+
+<script>
+
+const cards=document.querySelectorAll(".card");
+
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.style.opacity="1";
+entry.target.style.transform="translateY(0px)";
+
+}
+
+});
+
+});
+
+cards.forEach(card=>{
+
+card.style.opacity="0";
+card.style.transform="translateY(50px)";
+card.style.transition="0.8s";
+
+observer.observe(card);
+
+});
+
+</script>
+
+</body>
+</html>

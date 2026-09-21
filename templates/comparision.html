@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Appliance Comparison - Inspired Home Solutions</title>
+<link rel="stylesheet" type="text/css" href="../static/css/comparision.css">
+
+
+</head>
+<body>
+
+<header>
+<h1>Inspired Home Solutions</h1>
+<p>Home Appliance Comparison</p>
+</header>
+
+<nav>
+<a href="main.html">Home</a>
+<a href="homeappli.html">Appliances</a>
+<a href="review.html">Reviews</a>
+<a href="booking.html">contact</a>
+</nav>
+
+<div class="container">
+
+<h2>Compare Appliances</h2>
+
+<div class="compare-box">
+
+<div class="card">
+<img id="img1" src="../static/images/refrigerator.jpg" alt="">
+<select id="item1" onchange="loadProducts()">
+<option>Refrigerator</option>
+<option>Washing Machine</option>
+<option>Microwave Oven</option>
+</select>
+</div>
+
+<div class="card">
+<img id="img2" src="../static/images/washing.jpg" alt="">
+<select id="item2" onchange="loadProducts()">
+<option>Washing Machine</option>
+<option>Refrigerator</option>
+<option>Microwave Oven</option>
+</select>
+</div>
+
+</div>
+
+<center>
+<button onclick="compare()">Compare</button>
+</center>
+
+<table>
+
+<tr>
+<th>Feature</th>
+<th>Appliance 1</th>
+<th>Appliance 2</th>
+</tr>
+
+<tr>
+<td>Price</td>
+<td id="price1">45,000</td>
+<td id="price2">35,000</td>
+</tr>
+
+<tr>
+<td>Rating</td>
+<td id="rating1">4.7 </td>
+<td id="rating2">4.5</td>
+</tr>
+
+<tr>
+<td>Energy Rating</td>
+<td id="energy1">5 Star</td>
+<td id="energy2">4 Star</td>
+</tr>
+
+<tr>
+<td>Warranty</td>
+<td id="war1">10 Years</td>
+<td id="war2">5 Years</td>
+</tr>
+
+</table>
+
+</div>
+
+<footer>
+ 2026 Inspired Home Solutions
+</footer>
+
+<script>
+
+const data={
+
+"Refrigerator":{
+price:"45,000",
+rating:"4.7 ",
+energy:"5 Star",
+war:"10 Years",
+img:"../static/images/refrigerator.jpg"
+},
+
+"Washing Machine":{
+price:"35,000",
+rating:"4.5 ",
+energy:"4 Star",
+war:"5 Years",
+img:"../static/images/washing.jpg"
+},
+
+"Microwave Oven":{
+price:"18,000",
+rating:"4.4 ",
+energy:"5 Star",
+war:"3 Years",
+img:"../static/images/microwave.jpg"
+}
+
+};
+
+function loadProducts(){
+
+let a=document.getElementById("item1").value;
+let b=document.getElementById("item2").value;
+
+document.getElementById("img1").src=data[a].img;
+document.getElementById("img2").src=data[b].img;
+
+}
+
+function compare(){
+
+let a=data[document.getElementById("item1").value];
+let b=data[document.getElementById("item2").value];
+
+price1.innerHTML=a.price;
+price2.innerHTML=b.price;
+
+rating1.innerHTML=a.rating;
+rating2.innerHTML=b.rating;
+
+energy1.innerHTML=a.energy;
+energy2.innerHTML=b.energy;
+
+war1.innerHTML=a.war;
+war2.innerHTML=b.war;
+
+}
+
+</script>
+<script src="../static/js/data-fetch.js"></script>
+
+</body>
+</html>

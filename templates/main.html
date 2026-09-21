@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inspired Home Solutions</title>
+<link rel="stylesheet" type="text/css" href="../static/css/main.css">
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">Inspired Home Solutions</div>
+
+<nav>
+<a href="#">Home</a>
+<a href="login.html">login</a>
+<a href="website.html">Interior</a>
+<a href="architecture.html">Architecture</a>
+<a href="homeappli.html">Appliances</a>
+<a href="booking.html">Contact</a>
+</nav>
+
+
+</header>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Design Your Dream Home</h1>
+
+<p>
+Modern Interior Design, Smart Home Architecture,
+and Premium Home Appliances under one roof.
+</p>
+
+<button onclick="scrollServices()">Explore Services</button>
+
+</div>
+
+</section>
+
+<section id="services">
+
+<h2 class="title">Our Services</h2>
+
+<div class="services">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=600&q=80">
+
+<h3>Interior Design</h3>
+
+<p>Elegant living rooms, bedrooms, kitchens, and luxury interiors.</p>
+
+<a href="website.html"><button>View More</button></a>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=600&q=80">
+
+<h3>Home Architecture</h3>
+
+<p>Modern house plans, villas, elevations, and 3D designs.</p>
+
+<a href="architecture.html"><button>View More</button></a>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=600&q=80">
+
+<h3>Home Appliances</h3>
+
+<p>Smart kitchens, premium appliances, and modern home solutions.</p>
+
+<a href="homeappli.html"><button>View More</button></a>
+
+</div>
+
+</div>
+
+</section>
+<section>
+<section id="feature">
+
+<h2 class="title">Our Features</h2>
+
+<div class="services">
+
+<div class="card">
+
+<img src="../static/images/comparision.jpg">
+
+<h3>comparision</h3>
+
+<a href="comparision.html"><button>View More</button></a>
+
+</div>
+
+<div class="card">
+
+<img src="../static/images/analytics.jpg">
+
+<h3>Analytices</h3>
+
+<a href="analytices.html"><button>View More</button></a>
+
+</div>
+
+
+<div class="card">
+
+<img src="../static/images/reveiw.jpg">
+
+<h3>Review</h3>
+
+<a href="review.html"><button>View More</button></a>
+
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="about">
+
+<img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=700&q=80">
+
+<div class="about-text">
+
+<h2>Why Inspired Home Solutions</h2>
+
+<p>
+We create elegant homes with stylish interiors,
+innovative architecture, and premium appliances.
+Our mission is to provide beautiful, comfortable,
+and functional living spaces for every family.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<footer>
+
+<p>2026 Inspired Home Solutions | All Rights Reserved</p>
+
+</footer>
+
+<button id="darkBtn">dark</button>
+
+<script>
+
+function scrollServices(){
+
+document.getElementById("services").scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+function sendMessage(){
+
+alert("Thank you! We will contact you soon.");
+
+}
+
+const darkBtn=document.getElementById("darkBtn");
+
+darkBtn.onclick=function(){
+
+document.body.classList.toggle("dark");
+
+darkBtn.innerHTML=document.body.classList.contains("dark")?"?":"??";
+
+}
+
+</script>
+
+</body>
+</html>

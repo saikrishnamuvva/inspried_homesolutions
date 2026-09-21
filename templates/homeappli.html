@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Home Appliances</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../static/css/homeappliance.css">
+
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">SmartHome</div>
+
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#products">Products</a></li>
+<li><a href="booking.html">Contact</a></li>
+</ul>
+
+</nav>
+
+<div class="hero">
+
+<div>
+
+<h1>Smart Kitchens & Premium Home Appliances</h1>
+
+<p>
+Upgrade your lifestyle with energy-efficient kitchen appliances,
+modern smart home technology, and premium solutions for everyday living.
+</p>
+
+<button onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+Explore Products
+</button>
+
+</div>
+
+</div>
+
+<section id="products">
+
+<h2 class="title">Premium Home Appliances</h2>
+
+<div class="grid">
+
+<div class="card">
+<img src="../images/fizz.jpg">
+<a href="Smart Refrigerator.html"><h3>Smart Refrigerator</h3></a>
+<p>AI-powered cooling with energy-saving technology and modern storage.</p>
+</div>
+
+
+
+<div class="card">
+<img src="../static/images/oven.jpg">
+<a href="oven.html"><h3>Microwave Oven</h3></a>
+<p>Fast cooking with smart presets and elegant premium design.</p>
+</div>
+
+<div class="card">
+<img src="../static/images/wash.jpg">
+<a href="washing.html"><h3>Automatic Washing Machine</h3></a>
+<p>Efficient washing technology with intelligent water management.</p>
+</div>
+<div class="card">
+<img src="../static/images/other.jpg">
+<a href="other.html"><h3>another machine</h3></a>
+<p>Efficient washing technology with intelligent  management.</p>
+</div>
+<div class="card">
+<img src="../static/images/comparision.jpg">
+<a href="comparision.html"><h3>comparision</h3></a>
+</div>
+
+
+
+</div>
+
+</section>
+
+
+
+<div class="banner" id="contact">
+
+<h2>Experience the Future of Smart Living</h2>
+
+<p>
+Transform your home with intelligent appliances, elegant kitchen solutions,
+and premium technology designed for comfort, convenience, and efficiency.
+</p>
+
+</div>
+
+<footer>
+
+  2026 SmartHome Appliances | Premium Kitchen & Home Solutions
+
+</footer>
+
+<script>
+
+const cards=document.querySelectorAll(".card");
+
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.style.opacity="1";
+entry.target.style.transform="translateY(0px)";
+
+}
+
+});
+
+});
+fetch("/api/review.html", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        name: name,
+        rating: rating,
+        comment: comment
+    })
+})
+.then(response => response.json())
+.then(data => {
+    console.log(data);
+
+    if (data.success) {
+        alert("Review submitted successfully!");
+        location.reload();
+    } else {
+        alert(data.message);
+    }
+})
+.catch(error => {
+    console.error("Error:", error);
+    alert("Unable to submit review");
+});
+
+cards.forEach(card=>{
+
+card.style.opacity="0";
+card.style.transform="translateY(50px)";
+card.style.transition="0.8s";
+
+observer.observe(card);
+
+});
+
+</script>
+<script src="/js/data-fetch.js"></script>
+
+</body>
+</html>

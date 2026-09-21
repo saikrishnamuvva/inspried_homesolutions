@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Inspired Home Solutions | Book a Consultation</title>
+
+<link rel="stylesheet" type="text/css" href="../static/css/booking.css">
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Inspired Home Solutions</h1>
+
+<p>Book Your Home Consultation</p>
+
+</header>
+
+
+<div class="container">
+
+<h1>Service</h1>
+<br>
+<form id="bookingForm" action="/submit_booking" method="POST">
+<h2><b>FIRST PERSON</b></h2>
+
+<div class="form-group">
+<label>Full Name: <i>Bhaskarsai</i></label>
+</div>
+
+<div class="form-group">
+<label>AGE: <b>20</b></label>
+</div>
+
+<div class="form-group">
+<label>ADDRESS: <b>Chirala</b></label>
+</div>
+
+<div class="form-group">
+<label>Phone: <b>xxxxxxxxxx</b></label>
+</div>
+
+
+<h1>Service</h1>
+<br>
+
+<h2><b>SECOND PERSON</b></h2>
+
+<div class="form-group">
+<label>Full Name: <i>Syam</i></label>
+</div>
+
+<div class="form-group">
+<label>AGE: <b>20</b></label>
+</div>
+
+<div class="form-group">
+<label>ADDRESS: <b>Ponnur</b></label>
+</div>
+
+<div class="form-group">
+<label>Phone: <b>xxxxxxxxxx</b></label>
+</div>
+
+
+<h1>Service</h1>
+<br>
+
+<h2><b>THIRD PERSON</b></h2>
+
+<div class="form-group">
+<label>Full Name: <i>Sk.Tajuddin</i></label>
+</div>
+
+<div class="form-group">
+<label>AGE: <b>20</b></label>
+</div>
+
+<div class="form-group">
+<label>ADDRESS: <b>Guntur</b></label>
+</div>
+
+<div class="form-group">
+<label>Phone: <b>xxxxxxxxxx</b></label>
+</div>
+
+
+<h1>Service</h1>
+<br>
+
+<h2><b>FOURTH PERSON</b></h2>
+
+<div class="form-group">
+<label>Full Name: <i>SaiKrishana</i></label>
+</div>
+
+<div class="form-group">
+<label>AGE: <b>20</b></label>
+</div>
+
+<div class="form-group">
+<label>ADDRESS: <b>Bapatla</b></label>
+</div>
+
+<div class="form-group">
+<label>Phone: <b>xxxxxxxxxx</b></label>
+</div>
+
+
+<h1>Service</h1>
+<br>
+
+<h2><b>FIFTH PERSON</b></h2>
+
+<div class="form-group">
+<label>Full Name: <i>Sk.Baji</i></label>
+</div>
+
+<div class="form-group">
+<label>AGE: <b>20</b></label>
+</div>
+
+<div class="form-group">
+<label>ADDRESS: <b>Chirala</b></label>
+</div>
+
+<div class="form-group">
+<label>Phone: <b>xxxxxxxxxx</b></label>
+</div>
+
+</div>
+
+
+<!-- APPOINTMENT FORM -->
+
+<div class="container">
+
+<h2>Your Appointment</h2>
+
+<form id="bookingForm">
+
+
+<!-- NAME -->
+
+<div class="form-group">
+
+<label>Full Name</label>
+
+<input
+type="text"
+id="name"
+placeholder="Enter your full name"
+required
+>
+
+</div>
+
+
+<!-- EMAIL -->
+
+<div class="form-group">
+
+<label>Email Address</label>
+
+<input
+type="email"
+id="email"
+placeholder="Enter your email"
+required
+>
+
+</div>
+
+
+<!-- PHONE -->
+
+<div class="form-group">
+
+<label>Phone Number</label>
+
+<input
+type="tel"
+id="phone"
+placeholder="Enter your phone number"
+required
+>
+
+</div>
+
+
+<!-- PERSON -->
+
+<div class="form-group">
+
+<label>Select Person</label>
+
+<select id="person" required>
+
+<option value="">Choose a person</option>
+
+<option value="Bhaskarsai">
+Bhaskarsai
+</option>
+
+<option value="Syam">
+Syam
+</option>
+
+<option value="Sk.Tajuddin">
+Sk.Tajuddin
+</option>
+
+<option value="SaiKrishana">
+SaiKrishana
+</option>
+
+<option value="Sk.Baji">
+Sk.Baji
+</option>
+
+</select>
+
+</div>
+
+
+<!-- SERVICE -->
+
+<div class="form-group">
+
+<label>Select Service</label>
+
+<select id="service" required>
+
+<option value="">
+Choose a Service
+</option>
+
+<option value="Kitchen Remodeling">
+Kitchen Remodeling
+</option>
+
+<option value="Bathroom Renovation">
+Bathroom Renovation
+</option>
+
+<option value="Roof Installation">
+Roof Installation
+</option>
+
+<option value="Flooring">
+Flooring
+</option>
+
+<option value="Interior Painting">
+Interior Painting
+</option>
+
+<option value="Exterior Painting">
+Exterior Painting
+</option>
+
+<option value="Window Installation">
+Window Installation
+</option>
+
+<option value="Home Repairs">
+Home Repairs
+</option>
+
+<option value="General Consultation">
+General Consultation
+</option>
+
+</select>
+
+</div>
+
+
+<!-- DATE -->
+
+<div class="form-group">
+
+<label>Preferred Date</label>
+
+<input
+type="date"
+id="date"
+required
+>
+
+</div>
+
+
+<!-- TIME -->
+
+<div class="form-group">
+
+<label>Preferred Time</label>
+
+<input
+type="time"
+id="time"
+required
+>
+
+</div>
+
+
+<!-- ADDRESS -->
+
+<div class="form-group">
+
+<label>Property Address</label>
+
+<input
+type="text"
+id="address"
+placeholder="Enter property address"
+required
+>
+
+</div>
+
+
+<!-- DESCRIPTION -->
+
+<div class="form-group">
+
+<label>Description</label>
+
+<textarea
+id="description"
+rows="5"
+placeholder="Tell us about your problems..."
+></textarea>
+
+</div>
+
+
+<!-- BOOK BUTTON -->
+
+<button type="submit">
+
+Book Appointment
+
+</button>
+
+</form>
+<div class="success" id="successMessage" style="display:none;">
+
+    <h3>Appointment Confirmed!</h3>
+
+    <p>
+        Thank you! Your consultation has been booked successfully.
+    </p>
+
+    <p>
+        We will contact you shortly to confirm your appointment.
+    </p>
+
+    <a href="contact.html" class="contact-button">
+        Contact Us
+    </a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<footer>
+
+© 2026 Inspired Home Solutions. All Rights Reserved.
+
+</footer>
+
+<script src="../static/js/booking.js"></script>
+<script src="../static/js/data-fetch.js"></script>
+
+</body>
+
+</html>

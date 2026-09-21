@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modern Living Room</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../static/css/modern.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">Modern Living</div>
+
+<nav>
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#theme">Theme</a></li>
+<li><a href="booking.html">contact</a></li>
+</ul>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Modern Living Room</h1>
+
+<p>Elegant   Comfortable   Timeless Design</p>
+
+<button onclick="scrollGallery()">Explore Designs</button>
+
+</div>
+
+</section>
+
+<section id="gallery">
+
+<h2 class="section-title">Living Room Inspiration</h2>
+
+<div class="gallery">
+
+<div class="card">
+<img src="../static/images/image2.jpg">
+<div class="card-content">
+<a href="minimal.html"><h3>Luxury Interior</h3></a>
+<p>Neutral colors with clean furniture for a luxurious feel.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80">
+<div class="card-content">
+<a href="medium.html"><h3>Medium Style</h3></a>
+<p>Bright interiors with wooden textures and natural lighting.</p>
+</div>
+</div>
+
+
+
+</div>
+
+</section>
+
+<section id="features">
+
+<h2 class="section-title">Room Highlights</h2>
+
+<div class="features">
+
+<div class="feature">
+<h2 id="count1">0</h2>
+<p>Interior Projects</p>
+</div>
+
+<div class="feature">
+<h2 id="count2">0</h2>
+<p>Design Awards</p>
+</div>
+
+<div class="feature">
+<h2 id="count3">0</h2>
+<p>Happy Clients</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="theme" class="theme">
+
+<h2 class="section-title">Customize Your Experience</h2>
+
+<p>Switch between Light and Dark mode.</p>
+
+<button id="themeBtn">Toggle Theme</button>
+
+</section>
+
+<footer>
+
+<p>  2026 Modern Living Room | HTML   CSS   JavaScript</p>
+
+</footer>
+
+<script>
+
+// Smooth Scroll
+
+function scrollGallery(){
+document.getElementById("gallery").scrollIntoView({
+behavior:"smooth"
+});
+}
+
+// Animated Counters
+
+function animate(id,target){
+
+let num=0;
+
+let interval=setInterval(function(){
+
+num++;
+
+document.getElementById(id).innerHTML=num+"+";
+
+if(num>=target){
+clearInterval(interval);
+}
+
+},20);
+
+}
+
+animate("count1",250);
+animate("count2",35);
+animate("count3",500);
+
+// Dark Mode
+
+const btn=document.getElementById("themeBtn");
+
+btn.onclick=function(){
+
+document.body.classList.toggle("dark");
+
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medium Style Interior</title>
+<link rel="stylesheet" type="text/css" href="../static/css/medium.css">
+
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">Medium Style</div>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#designs">Designs</a>
+<a href="#about">About</a>
+<a href="booking.html">Contact</a>
+</nav>
+
+<button id="themeBtn">??</button>
+
+</header>
+
+<!-- Hero -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<h1>Bright & Elegant Interiors</h1>
+
+<p>
+Experience medium-style interiors with warm wooden textures,
+natural lighting, and modern furniture for a welcoming home.
+</p>
+
+<button onclick="document.getElementById('designs').scrollIntoView({behavior:'smooth'})">
+Explore Designs
+</button>
+
+</div>
+
+</section>
+
+<!-- Designs -->
+
+<section id="designs">
+
+<h2 class="title">Featured Interior Designs</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="../static/images/image1.jpg">
+</div>
+<div class="card">
+<img src="../static/images/image2.jpg">
+</div>
+<div class="card">
+<img src="../static/images/image3.jpg">
+</div>
+<div class="card">
+<img src="../static/images/images5.jpg">
+</div>
+<div class="card">
+<img src="../static/images/image4.jpg">
+</div>
+
+</div>
+
+</section>
+
+<!-- About -->
+
+<section id="about">
+
+<div class="about">
+
+<img src="../static/images/image4.jpg">
+
+<div class="about-text">
+
+<h2>About Medium Style</h2>
+
+<p>
+Medium Style combines bright interiors, elegant wood textures,
+large windows, and natural lighting to create comfortable,
+luxurious, and functional living spaces that reflect modern lifestyles.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>� 2026 Medium Style Interior Design | Bright � Natural � Elegant</p>
+
+</footer>
+
+<script>
+
+const themeBtn=document.getElementById("themeBtn");
+
+themeBtn.onclick=function(){
+
+document.body.classList.toggle("dark");
+
+themeBtn.innerHTML=document.body.classList.contains("dark")?"?":"??";
+
+}
+
+function sendMessage(){
+
+alert("Thank you! Your message has been sent successfully.");
+
+}
+
+</script>
+
+</body>
+</html>

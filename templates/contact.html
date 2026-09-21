@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Contact - Inspired Home Solutions</title>
+
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+
+</head>
+
+
+<body>
+
+<header>
+
+    <div class="logo">
+        Inspired Home Solutions
+    </div>
+
+
+    <nav>
+
+        <a href="main.html">
+            Home
+        </a>
+
+        <a href="registration.html">
+            Register
+        </a>
+
+        <a href="login.html">
+            Login
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </nav>
+
+</header>
+
+
+<section class="contact-section">
+
+    <div class="contact-box">
+
+        <h1>Contact Us</h1>
+
+        <p>
+            Have a question about Interior Design,
+            Architecture or Home Appliances?
+        </p>
+
+
+        <form id="contactForm">
+
+            <label>Full Name</label>
+
+            <input
+                type="text"
+                id="contactName"
+                placeholder="Enter your name"
+                required
+            >
+
+
+            <label>Email Address</label>
+
+            <input
+                type="email"
+                id="contactEmail"
+                placeholder="Enter your email"
+                required
+            >
+
+
+            <label>Subject</label>
+
+            <input
+                type="text"
+                id="subject"
+                placeholder="Enter subject"
+            >
+
+
+            <label>Message</label>
+
+            <textarea
+                id="contactMessage"
+                rows="6"
+                placeholder="Enter your message"
+                required
+            ></textarea>
+
+
+            <button type="submit">
+                Send Message
+            </button>
+
+        </form>
+
+
+        <p id="contactResult"></p>
+
+    </div>
+
+</section>
+
+
+<script>
+
+const contactForm =
+    document.getElementById("contactForm");
+
+
+contactForm.addEventListener(
+    "submit",
+    async function(event) {
+
+        event.preventDefault();
+
+
+        const name =
+            document.getElementById(
+                "contactName"
+            ).value.trim();
+
+
+        const email =
+            document.getElementById(
+                "contactEmail"
+            ).value.trim();
+
+
+        const subject =
+            document.getElementById(
+                "subject"
+            ).value.trim();
+
+
+        const message =
+            document.getElementById(
+                "contactMessage"
+            ).value.trim();
+
+
+        const resultMessage =
+            document.getElementById(
+                "contactResult"
+            );
+
+
+        try {
+
+            const response = await fetch(
+                "http://127.0.0.1:5000/api/contact",
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type":
+                            "application/json"
+                    },
+
+                    body: JSON.stringify({
+
+                        name: name,
+
+                        email: email,
+
+                        subject: subject,
+
+                        message: message
+
+                    })
+                }
+            );
+
+
+            const result =
+                await response.json();
+
+
+            resultMessage.innerText =
+                result.message;
+
+
+            if (result.success) {
+
+                contactForm.reset();
+
+            }
+
+        } catch (error) {
+
+            resultMessage.innerText =
+                "Unable to connect to the server.";
+
+            console.error(error);
+        }
+
+    }
+);
+
+</script>
+<script src="../static/js/data-fetch.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modern Kitchen Design</title>
+<link rel="stylesheet" type="text/css" href="../static/css/kitchen.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">KitchenSpace</div>
+
+<nav>
+
+<a href="#home">Home</a>
+<a href="#gallery">Gallery</a>
+<a href="booking.html">Contact</a>
+
+</nav>
+
+<button id="themeBtn">??</button>
+
+</header>
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<h1>Modern Kitchen Design</h1>
+
+<p>
+Functional layouts combined with stylish cabinetry to create
+beautiful, organized, and efficient kitchens for every home.
+</p>
+
+<button onclick="scrollGallery()">Explore Designs</button>
+
+</div>
+
+</section>
+
+
+<section id="gallery">
+
+<h2 class="title">Kitchen Gallery</h2>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=800&q=80">
+
+<img src="../static/images/kit1.jpg">
+
+<img src="../static/images/kit2.jpg">
+
+<img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=800&q=80">
+
+</div>
+
+</section>
+
+<footer>
+
+<p>2026 KitchenSpace | Functional Layouts Stylish Cabinetry</p>
+
+</footer>
+
+<script>
+
+const theme=document.getElementById("themeBtn");
+
+theme.onclick=function(){
+
+document.body.classList.toggle("dark");
+
+theme.innerHTML=document.body.classList.contains("dark")?"?":"??";
+
+}
+
+function scrollGallery(){
+
+document.getElementById("gallery").scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+function sendMessage(){
+
+alert("Thank you! We will contact you soon.");
+
+}
+
+</script>
+
+</body>
+</html>
